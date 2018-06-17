@@ -17,11 +17,16 @@ class TodoStore {
     @observable filter = "";
     @computed get filterTodos(){
         var matchFilter = RegExp(this.filter, "i")
-        return this.todos.filter(todo => !this.filter || matchFilter.test(todo))
+        return this.todos.filter(todo => !this.filter || matchFilter.test(todo.value))
     }
 
     crateTodo(value){
         this.todos.push(new Todo(value));
+    }
+
+    clearComplete = () =>{
+        const incopleteTodos = this.todos.filter(todo => !todo.complete)
+        this.todos.replace(incopleteTodos)
     }
 }
 
