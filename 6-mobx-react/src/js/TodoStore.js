@@ -1,7 +1,19 @@
 import { computed, observable } from "mobx";
 
+class Todo{
+    @observable value
+    @observable id
+    @observable complete
+
+    constructor(value){
+        this.value = value
+        this.id = Date.now()
+        this.complete = false
+    }
+}
+
 class TodoStore {
-    @observable todos = ["buy milk", "buy eggs", "fly", "drive",  "go places", "sleep", "dream"];
+    @observable todos = [];
     @observable filter = "";
     @computed get filterTodos(){
         var matchFilter = RegExp(this.filter, "i")
@@ -9,7 +21,7 @@ class TodoStore {
     }
 
     crateTodo(value){
-        this.todos.push(value);
+        this.todos.push(new Todo(value));
     }
 }
 

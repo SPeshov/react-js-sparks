@@ -19,7 +19,10 @@ export default class TodoList extends React.Component {
     const { filter,filterTodos , todos } = this.props.store
 
     const todoLis = filterTodos.map(todo => (
-      <li>{todo}</li>
+      <li key={todo.id}>
+      <input type="checkbox" value={todo.complete} checked={todo.complete}/>
+       {todo.value} 
+       </li>
     ))
 
     return(
