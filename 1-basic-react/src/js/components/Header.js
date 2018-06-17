@@ -7,7 +7,7 @@ export default class Header extends React.Component {
     const title = e.target.value;
     this.props.changeTitle(title);
   }
-
+  
   render() {
     return (
       <div>
@@ -15,5 +15,5 @@ export default class Header extends React.Component {
         <input value={this.props.title} onChange={this.handleChange.bind(this)} />
       </div>
     );
-  }
+  }  
 }

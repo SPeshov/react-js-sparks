@@ -4,8 +4,8 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 export default class Layout extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "Welcome",
     };

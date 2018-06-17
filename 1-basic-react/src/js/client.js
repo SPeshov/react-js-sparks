@@ -1,7 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import Layout from "./components/Layout";
 
-const app = document.getElementById('app');
-ReactDOM.render(<Layout/>, app);
+ class Client extends Component {
+
+    constructor(props){
+      super(props);      
+    }
+
+    render(){   
+        return <div>aaaaaaaaa</div>;
+        };
+    }
+
+
+ReactDOM.render(<Client />, document.querySelector('.container'));
