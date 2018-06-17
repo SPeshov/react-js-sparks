@@ -7,6 +7,10 @@ class TodoStore {
         var matchFilter = RegExp(this.filter, "i")
         return this.todos.filter(todo => !this.filter || matchFilter.test(todo))
     }
+
+    crateTodo(value){
+        this.todos.push(value);
+    }
 }
 
 
